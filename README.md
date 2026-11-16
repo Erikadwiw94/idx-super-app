@@ -146,17 +146,3 @@ Semua berjalan di server Anda sendiri, tanpa biaya langganan bulanan.
    │  (Fundamental│                             │  Port 8000  │
    └──────────────┘                             └─────────────┘
 
-### Prasyarat
-
-Sebelum memulai, pastikan sistem Anda sudah memiliki:
-
-- **Python 3.11+** — [Download di sini](https://www.python.org/downloads/)
-- **Git** — [Download di sini](https://git-scm.com/downloads)
-- **(Opsional) Docker & Docker Compose** — [Download di sini](https://www.docker.com/products/docker-desktop/)
-
-Cek versi yang terinstal di terminal:
-
-```bash
-python3 --version    # harus 3.11 atau lebih baru
-git --version
-docker --version     # opsional
