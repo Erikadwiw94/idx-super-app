@@ -146,9 +146,11 @@ Semua berjalan di server Anda sendiri, tanpa biaya langganan bulanan.
    │  (Fundamental│                             │  Port 8000  │
    └──────────────┘                             └─────────────┘
 
+---
+
 ## 🚀 Instalasi
 
-### Prasyarat
+Prasyarat
 
 - **Python 3.11+**
 - **Git**
