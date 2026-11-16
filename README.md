@@ -1,3 +1,5 @@
+<div align="center">
+
 # ⚡ IDX Super App
 
 ### Platform Analisis Saham Indonesia Terpadu & Open-Source
@@ -145,7 +147,41 @@ Semua berjalan di server Anda sendiri, tanpa biaya langganan bulanan.
    │   Bursarium  │                             │  MCP Server │
    │  (Fundamental│                             │  Port 8000  │
    └──────────────┘                             └─────────────┘
+```
 
+---
+
+## 🚀 Instalasi
+
+### Prasyarat
+Sebelum memulai, pastikan sistem Anda sudah terinstal:
+- **Python 3.11+**
+- **Git**
+- *(Opsional)* **Docker & Docker Compose**
+
+### Langkah Cepat
+
+```bash
+# 1. Clone repositori
+git clone https://github.com/Erikadwiw94/web-gabungan.git
+cd web-gabungan
+
+# 2. Buat virtual environment
+python3 -m venv venv
+source venv/bin/activate     # Linux/Mac
+# venv\Scripts\activate      # Windows
+
+# 3. Install dependensi
+pip install -r requirements.txt
+
+# 4. (Opsional) Inisialisasi database saham
+python update_all_stocks.py
+
+# 5. Jalankan aplikasi
+streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+```
+
+Akses di browser: **`http://localhost:8501`**
 
 ### 🐳 Instalasi via Docker (Coming Soon)
 
