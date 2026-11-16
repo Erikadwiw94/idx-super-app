@@ -146,39 +146,6 @@ Semua berjalan di server Anda sendiri, tanpa biaya langganan bulanan.
    │  (Fundamental│                             │  Port 8000  │
    └──────────────┘                             └─────────────┘
 
----
-
-## 🚀 Instalasi
-
-Prasyarat
-
-- **Python 3.11+**
-- **Git**
-- *(Opsional)* **Docker & Docker Compose**
-
-### Langkah Cepat
-
-```bash
-# 1. Clone repositori
-git clone https://github.com/Erikadwiw94/web-gabungan.git
-cd web-gabungan
-
-# 2. Buat virtual environment
-python3 -m venv venv
-source venv/bin/activate     # Linux/Mac
-# venv\Scripts\activate      # Windows
-
-# 3. Install dependensi
-pip install -r requirements.txt
-
-# 4. (Opsional) Inisialisasi database saham
-python update_all_stocks.py
-
-# 5. Jalankan aplikasi
-streamlit run app.py --server.port 8501 --server.address 0.0.0.0
-```
-
-Akses di browser: **`http://localhost:8501`**
 
 ### 🐳 Instalasi via Docker (Coming Soon)
 
