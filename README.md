@@ -33,3 +33,45 @@ Ikuti langkah-langkah berikut untuk menjalankan platform ini di server Anda send
    ```bash
    git clone https://github.com/Erikadwiw94/web-gabungan.git
    cd web-gabungan
+Buat Virtual Environment & Install Dependensi:
+
+bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+(Catatan: Jika requirements.txt belum ada, Anda bisa menginstal library utama secara manual: pip install streamlit yfinance pandas pandas-ta-classic plotly requests feedparser vaderSentiment)
+
+Jalankan Aplikasi:
+
+bash
+streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+Buka di Browser:
+Akses http://localhost:8501 atau http://<IP_SERVER_ANDA>:8501.
+
+📁 Struktur Proyek
+text
+web-gabungan/
+│
+├── app.py                     # Halaman utama (Landing Page)
+├── update_database.py         # Script scraper data saham ke SQLite
+├── update_all_stocks.py       # Script scraper 900+ saham IDX
+├── stock_data.db              # Database lokal (di-ignore oleh Git)
+│
+├── pages/                     # Folder halaman Streamlit
+│   ├── 1_Screener.py
+│   ├── 2_Bandarmology.py
+│   ├── 3_Backtest.py
+│   ├── 4_Sentiment_AI.py
+│   ├── 5_Live_Price.py
+│   ├── 6_Ultimate_Analyzer.py
+│   ├── 7_Pro_Technical.py
+│   ├── 8_Indicator_Playground.py
+│   ├── 9_Dashboard_Angka.py
+│   └── 10_Broker_Summary_Live.py
+│
+└── README.md
+🤝 Berkontribusi
+Proyek ini dibangun untuk keperluan edukasi dan riset pribadi. Jika Anda ingin menambahkan fitur baru atau memperbaiki bug, silakan lakukan Pull Request.
+
+⚠️ Disclaimer
+Platform ini dibuat untuk tujuan edukasi dan analisis. Segala keputusan investasi yang diambil berdasarkan informasi dari platform ini adalah tanggung jawab pengguna sepenuhnya. Selalu lakukan riset mandiri (DYOR) sebelum bertransaksi di pasar modal.
