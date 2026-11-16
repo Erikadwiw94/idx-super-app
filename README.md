@@ -163,8 +163,8 @@ Sebelum memulai, pastikan sistem Anda sudah terinstal:
 
 ```bash
 # 1. Clone repositori
-git clone https://github.com/Erikadwiw94/web-gabungan.git
-cd web-gabungan
+git clone https://github.com/Erikadwiw94/idx-super-app.git
+cd idx-super-app
 
 # 2. Buat virtual environment
 python3 -m venv venv
