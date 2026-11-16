@@ -146,3 +146,152 @@ Semua berjalan di server Anda sendiri, tanpa biaya langganan bulanan.
    │  (Fundamental│                             │  Port 8000  │
    └──────────────┘                             └─────────────┘
 
+## 🚀 Instalasi
+
+### Prasyarat
+
+- **Python 3.11+**
+- **Git**
+- *(Opsional)* **Docker & Docker Compose**
+
+### Langkah Cepat
+
+```bash
+# 1. Clone repositori
+git clone https://github.com/Erikadwiw94/web-gabungan.git
+cd web-gabungan
+
+# 2. Buat virtual environment
+python3 -m venv venv
+source venv/bin/activate     # Linux/Mac
+# venv\Scripts\activate      # Windows
+
+# 3. Install dependensi
+pip install -r requirements.txt
+
+# 4. (Opsional) Inisialisasi database saham
+python update_all_stocks.py
+
+# 5. Jalankan aplikasi
+streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+```
+
+Akses di browser: **`http://localhost:8501`**
+
+### 🐳 Instalasi via Docker (Coming Soon)
+
+```bash
+docker compose up -d
+```
+
+---
+
+## 📁 Struktur Proyek
+
+```text
+web-gabungan/
+│
+├── app.py                     # Landing page utama
+├── update_database.py         # Scraper 50 saham (quick)
+├── update_all_stocks.py       # Scraper 900+ saham (full market)
+├── requirements.txt           # Dependensi Python
+├── .gitignore                 # File yang diabaikan Git
+│
+├── pages/                     # Halaman Streamlit
+│   ├── 1_Screener.py
+│   ├── 2_Bandarmology.py
+│   ├── 3_Backtest.py
+│   ├── 4_Sentiment_AI.py
+│   ├── 5_Live_Price.py
+│   ├── 6_Ultimate_Analyzer.py
+│   ├── 7_Pro_Technical.py
+│   ├── 8_Indicator_Playground.py
+│   ├── 9_Dashboard_Angka.py
+│   └── 10_Broker_Summary_Live.py
+│
+├── screenshots/               # Gambar untuk README
+├── LICENSE                    # MIT License
+├── CONTRIBUTING.md            # Panduan kontribusi
+└── README.md
+```
+
+---
+
+## 🗺️ Roadmap
+
+- [x] Screener Full Market (900+ saham)
+- [x] Mega Dashboard 113 Indikator
+- [x] Bandarmology via OBV
+- [x] Ultimate AI Analyzer (Composite Score)
+- [x] Integrasi Broker Summary (MCP)
+- [ ] Full Import 842 Saham Fundamental
+- [ ] Live Price via WebSocket Stabil
+- [ ] Auto-Start via systemd
+- [ ] Docker Compose Siap Pakai
+- [ ] Telegram Bot Alert Harian
+- [ ] Mobile-Friendly Layout
+- [ ] REST API Publik (FastAPI)
+- [ ] Unit Test & CI/CD Pipeline
+- [ ] Terjemahan Multibahasa (ID/EN)
+
+Lihat [Issues](https://github.com/Erikadwiw94/web-gabungan/issues) untuk daftar lengkap fitur yang sedang dikerjakan.
+
+---
+
+## 🤝 Berkontribusi
+
+Kami sangat terbuka untuk kontribusi dari siapa pun! Baik itu perbaikan bug, penambahan fitur, perbaikan dokumentasi, atau sekadar memberi ⭐ pada repositori ini.
+
+Silakan baca **[CONTRIBUTING.md](CONTRIBUTING.md)** untuk panduan lengkap.
+
+### Cara Cepat Berkontribusi:
+
+1. 🍴 **Fork** repositori ini
+2. 🌿 Buat branch baru (`git checkout -b feature/FiturKeren`)
+3. 💾 Commit perubahan (`git commit -m 'Menambahkan FiturKeren'`)
+4. 📤 Push ke branch (`git push origin feature/FiturKeren`)
+5. 🔃 Buat **Pull Request**
+
+### 💡 Ide Kontribusi untuk Pemula:
+
+- Perbaiki typo di dokumentasi
+- Tambahkan screenshot baru
+- Menambahkan indikator teknikal baru
+- Menerjemahkan README ke bahasa Inggris
+- Membuat unit test
+
+---
+
+## 📜 Lisensi
+
+Proyek ini dilisensikan di bawah **MIT License** — lihat file [LICENSE](LICENSE) untuk detailnya.
+
+Anda bebas menggunakan, memodifikasi, dan mendistribusikan kode ini, termasuk untuk tujuan komersial, selama menyertakan atribusi.
+
+---
+
+## ⚠️ Disclaimer
+
+> **Platform ini dibuat untuk tujuan edukasi dan riset.**
+> Segala keputusan investasi yang diambil berdasarkan informasi dari platform ini adalah tanggung jawab pengguna sepenuhnya. Selalu lakukan riset mandiri (**DYOR**) sebelum bertransaksi di pasar modal. Saham adalah instrumen berisiko tinggi — Anda bisa kehilangan seluruh modal Anda.
+
+---
+
+## 🙏 Acknowledgments
+
+Terima kasih kepada para pengembang open-source yang karyanya menjadi fondasi proyek ini:
+
+- [Streamlit](https://streamlit.io/) · [Pandas TA Classic](https://github.com/StreamAlpha/pandas_ta) · [yfinance](https://github.com/ranaroussi/yfinance)
+- [jv-idx-mcp](https://github.com/ibpme/jv-idx-mcp) · [idx-bei](https://github.com/nichsedge/idx-bei) · [Bursarium](https://github.com/herbras/bursarium)
+- [VADER Sentiment](https://github.com/cjhutto/vaderSentiment) · [Plotly](https://plotly.com/python/)
+- Seluruh kontributor komunitas IDX yang telah berbagi data dan ide.
+
+---
+
+<div align="center">
+
+**⭐ Jika proyek ini bermanfaat, jangan lupa beri bintang! ⭐**
+
+Dibuat dengan ❤️ untuk komunitas investor Indonesia.
+
+</div>
