@@ -1,77 +1,147 @@
-# ⚡ IDX Super App - Platform Analisis Saham Terpadu
+# ⚡ IDX Super App
 
-Selamat datang di **IDX Super App**, sebuah platform analisis saham Indonesia (IDX) yang komprehensif dan berjalan 100% di server pribadi Anda. Proyek ini menggabungkan berbagai teknik analisis (Teknikal, Fundamental, Bandarmology, Sentimen AI) ke dalam satu antarmuka web yang modern dan interaktif.
+### Platform Analisis Saham Indonesia Terpadu & Open-Source
 
-Dibangun dengan **Streamlit** dan **Python**, platform ini mengintegrasikan puluhan proyek open-source dan library analisis data untuk memberikan wawasan pasar yang *real-time* dan mendalam.
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)](https://plotly.com/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+[![GitHub stars](https://img.shields.io/github/stars/Erikadwiw94/web-gabungan?style=social)](https://github.com/Erikadwiw94/web-gabungan/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Erikadwiw94/web-gabungan?style=social)](https://github.com/Erikadwiw94/web-gabungan/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/Erikadwiw94/web-gabungan)](https://github.com/Erikadwiw94/web-gabungan/issues)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
+**Sebuah "Super App" untuk analisis saham IDX yang menggabungkan Teknikal, Fundamental, Bandarmology, dan Sentimen AI dalam satu dashboard.**
+
+[Fitur](#-fitur-utama) • [Instalasi](#-instalasi) • [Screenshots](#-screenshots) • [Roadmap](#-roadmap) • [Kontribusi](#-berkontribusi)
+
+</div>
+
+---
+
+## 📖 Tentang Proyek
+
+**IDX Super App** adalah platform analisis saham *self-hosted* untuk pasar modal Indonesia (Bursa Efek Indonesia). Proyek ini lahir dari kebutuhan akan alat analisis yang **gratis, transparan, dan bisa dikustomisasi** — sesuatu yang jarang ditemukan di platform komersial.
+
+Alih-alih hanya mengandalkan satu indikator, platform ini menggunakan pendekatan **Multi-Factor Analysis** yang menggabungkan:
+
+- 📈 **Analisis Teknikal** (113+ indikator dari `pandas-ta-classic`)
+- 💰 **Analisis Fundamental** (PER, PBV, ROE, DER dari Bursarium)
+- 🕵️ **Bandarmology** (OBV, Volume Spike, Broker Summary)
+- 🤖 **Sentimen Pasar** (NLP dari berita Google News)
+
+Semua berjalan di server Anda sendiri, tanpa biaya langganan bulanan.
+
+---
 
 ## ✨ Fitur Utama
 
-*   📊 **Screener Saham (Full Market):** Memindai 900+ saham IDX secara instan menggunakan database lokal SQLite (RSI, MA20, dll).
-*   🔥 **Mega Dashboard (113 Indikator):** Menghitung lebih dari 100 indikator teknikal sekaligus (Trend, Momentum, Volatilitas, Volume) berdasarkan daftar indikator Stockbit Pro, menggunakan library `pandas-ta-classic`.
-*   🕵️ **Bandarmology (Big Money Tracker):** Melacak akumulasi dan distribusi "Bandar" menggunakan indikator On-Balance Volume (OBV) dan Volume Spike.
-*   📉 **Pro Technical & Playground:** Visualisasi grafik candlestick interaktif dengan overlay indikator (Bollinger Bands, Supertrend, Ichimoku, dll).
-*   📡 **Broker Summary Live:** Integrasi dengan server MCP lokal (`jv-idx-mcp`) untuk mengambil data ringkasan broker (Top Buyer/Seller) secara *real-time*.
-*   🤖 **Sentiment AI:** Analisis sentimen berita pasar menggunakan NLP (VADER) untuk memberikan gambaran psikologis pasar.
-*   ⚙️ **Backtest:** Uji strategi trading (misal: MA Crossover) dengan data historis.
-*   🧠 **Ultimate Analyzer:** Skor komposit (0-100) yang menggabungkan Teknikal, Fundamental, Bandarmologi, dan Sentimen untuk memberikan rekomendasi BUY/HOLD/SELL.
+| Fitur | Deskripsi | Status |
+| :--- | :--- | :---: |
+| 📊 **Screener Full Market** | Scan 900+ saham IDX dengan RSI, MA20, dan filter fundamental secara instan. | ✅ |
+| 🔥 **Mega Dashboard (113 Indikator)** | Hitung 113 indikator teknikal sekaligus (Trend, Momentum, Volatilitas, Volume). | ✅ |
+| 🕵️ **Bandarmology Tracker** | Deteksi akumulasi/distribusi "Bandar" via On-Balance Volume & Volume Spike. | ✅ |
+| 📉 **Pro Technical Chart** | Grafik candlestick interaktif dengan 14+ overlay indikator profesional. | ✅ |
+| 🎛️ **Indicator Playground** | Kombinasikan overlay & oscillator sesuka hati dalam satu grafik. | ✅ |
+| 📋 **Dashboard Angka** | Nilai numerik semua indikator (multi-timeframe: Harian/Mingguan/Bulanan). | ✅ |
+| 📡 **Broker Summary Live** | Integrasi dengan `jv-idx-mcp` (Docker) untuk data Top Buyer/Seller real-time. | ✅ |
+| 🧠 **Ultimate AI Analyzer** | Skor komposit 0-100 (Teknikal+Fundamental+Bandar+Sentimen) untuk sinyal BUY/HOLD/SELL. | ✅ |
+| 🤖 **Sentiment AI** | Analisis sentimen berita via VADER NLP. | ✅ |
+| ⚙️ **Backtest Engine** | Uji strategi MA Crossover dengan grafik ekuitas vs Buy & Hold. | ✅ |
+| ⚡ **Live Price WebSocket** | Streaming harga real-time via WebSocket (eksperimental). | 🚧 |
+| 🗄️ **Full Fundamental DB** | Import 842 saham fundamental dari Bursarium. | 🚧 |
+| 🔔 **Telegram Bot Alert** | Notifikasi otomatis hasil screener harian ke Telegram. | 📅 |
+
+**Legend:** ✅ Selesai · 🚧 Dalam Pengembangan · 📅 Direncanakan
+
+---
+
+## 📸 Screenshots
+
+> *Tambahkan screenshot Anda sendiri di folder `screenshots/` untuk membuat README ini lebih hidup!*
+
+| Landing Page | Mega Dashboard 113 Indikator |
+| :---: | :---: |
+| ![Home](screenshots/home.png) | ![Mega Dashboard](screenshots/mega-dashboard.png) |
+
+| Bandarmology | Ultimate Analyzer |
+| :---: | :---: |
+| ![Bandarmology](screenshots/bandarmology.png) | ![Analyzer](screenshots/analyzer.png) |
+
+*(Cara menambahkan: buat folder `screenshots/`, lalu letakkan file gambar dengan nama sesuai di atas).*
+
+---
 
 ## 🛠️ Teknologi yang Digunakan
 
-*   **Frontend & Web Framework:** [Streamlit](https://streamlit.io/)
-*   **Analisis Data & Indikator:** Pandas, NumPy, [pandas-ta-classic](https://github.com/StreamAlpha/pandas_ta)
-*   **Visualisasi Data:** [Plotly](https://plotly.com/python/)
-*   **Data Pasar:** [yfinance](https://github.com/ranaroussi/yfinance)
-*   **Database:** SQLite (Lokal)
-*   **Integrasi API:** `requests`, `jv-idx-mcp` (Docker), WebSocket
-*   **AI & Sentimen:** VADER Sentiment, Feedparser (Google News RSS)
+<table>
+<tr>
+<td valign="top" width="33%">
 
-## 🚀 Cara Instalasi (Local / Server)
+**Frontend**
+- Streamlit
+- Plotly (Interactive Charts)
+- Custom CSS
 
-Ikuti langkah-langkah berikut untuk menjalankan platform ini di server Anda sendiri:
+**Data & Analisis**
+- Pandas & NumPy
+- pandas-ta-classic
+- yfinance
 
-1. **Clone Repositori:**
-   ```bash
-   git clone https://github.com/Erikadwiw94/web-gabungan.git
-   cd web-gabungan
-Buat Virtual Environment & Install Dependensi:
+</td>
+<td valign="top" width="33%">
 
-bash
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-(Catatan: Jika requirements.txt belum ada, Anda bisa menginstal library utama secara manual: pip install streamlit yfinance pandas pandas-ta-classic plotly requests feedparser vaderSentiment)
+**Backend & Storage**
+- Python 3.11+
+- SQLite (lokal)
+- PostgreSQL (Stocks Dashboard)
+- APScheduler (cron)
 
-Jalankan Aplikasi:
+**Integrasi & AI**
+- requests, WebSocket
+- VADER Sentiment
+- feedparser (RSS)
 
-bash
-streamlit run app.py --server.port 8501 --server.address 0.0.0.0
-Buka di Browser:
-Akses http://localhost:8501 atau http://<IP_SERVER_ANDA>:8501.
+</td>
+<td valign="top" width="33%">
 
-📁 Struktur Proyek
-text
-web-gabungan/
-│
-├── app.py                     # Halaman utama (Landing Page)
-├── update_database.py         # Script scraper data saham ke SQLite
-├── update_all_stocks.py       # Script scraper 900+ saham IDX
-├── stock_data.db              # Database lokal (di-ignore oleh Git)
-│
-├── pages/                     # Folder halaman Streamlit
-│   ├── 1_Screener.py
-│   ├── 2_Bandarmology.py
-│   ├── 3_Backtest.py
-│   ├── 4_Sentiment_AI.py
-│   ├── 5_Live_Price.py
-│   ├── 6_Ultimate_Analyzer.py
-│   ├── 7_Pro_Technical.py
-│   ├── 8_Indicator_Playground.py
-│   ├── 9_Dashboard_Angka.py
-│   └── 10_Broker_Summary_Live.py
-│
-└── README.md
-🤝 Berkontribusi
-Proyek ini dibangun untuk keperluan edukasi dan riset pribadi. Jika Anda ingin menambahkan fitur baru atau memperbaiki bug, silakan lakukan Pull Request.
+**Infrastruktur**
+- Docker & Compose
+- systemd (auto-start)
+- GitHub Actions (CI/CD)
 
-⚠️ Disclaimer
-Platform ini dibuat untuk tujuan edukasi dan analisis. Segala keputusan investasi yang diambil berdasarkan informasi dari platform ini adalah tanggung jawab pengguna sepenuhnya. Selalu lakukan riset mandiri (DYOR) sebelum bertransaksi di pasar modal.
+**Data Source**
+- Yahoo Finance
+- Bursarium
+- jv-idx-mcp (MCP Server)
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🏗️ Arsitektur Sistem
+
+```text
+┌──────────────────────────────────────────────────────────────────┐
+│                      USER (Browser / HP)                         │
+└───────────────────────────┬──────────────────────────────────────┘
+                            │ HTTP :8501
+┌───────────────────────────▼──────────────────────────────────────┐
+│             STREAMLIT FRONTEND (Multi-Page App)                  │
+│  Screener │ Bandarmology │ 113 Indikator │ Broker Summary │ AI   │
+└───────┬──────────────────────┬──────────────────────┬────────────┘
+        │                      │                      │
+   ┌────▼────┐          ┌──────▼──────┐        ┌──────▼──────┐
+   │ SQLite  │          │  yfinance   │        │  jv-idx-mcp │
+   │ (Lokal) │          │ (Yahoo API) │        │  (Docker)   │
+   └─────────┘          └─────────────┘        └─────────────┘
+        │                                             │
+   ┌────▼─────────┐                             ┌─────▼───────┐
+   │   Bursarium  │                             │  MCP Server │
+   │  (Fundamental│                             │  Port 8000  │
+   └──────────────┘                             └─────────────┘
